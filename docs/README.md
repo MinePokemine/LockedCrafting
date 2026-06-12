@@ -15,3 +15,4 @@ You can stop it from telling you either or both of these.
 ---
 
 #### [How to configure messages](MESSAGE_CONFIG.md)
+#### [How to configure locked recipes](LOCKED_RECIPE_CONFIG.md)

@@ -8,6 +8,10 @@ recipes:
     mace:
       itemReqs:
         - "minecraft:stick"
+        - "minecraft:apple"
+
+  diamond_spear:
+    itemReqs: [ "minecraft:diamond", "minecraft:iron_axe" ]
 
 
 
