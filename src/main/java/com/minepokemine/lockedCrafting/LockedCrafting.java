@@ -9,6 +9,7 @@ public final class LockedCrafting extends JavaPlugin {
     public void onEnable() {
         instance = this;
         getServer().getPluginManager().registerEvents(new Events(), this);
+        saveDefaultConfig();
     }
 
     @Override
