@@ -1,0 +1,28 @@
+recipes:
+  # Syntax: recipes.namespace.key.itemReqs:
+  # Or, if namespace is minecraft, you can just use: recipes.key.itemReqs
+
+  # The recipe namespace:key will fail unless every element of itemReqs is in the player crafting's inventory
+
+  minecraft:
+    mace:
+      itemReqs:
+        - "minecraft:stick"
+
+
+
+messages:
+  missingReqs:
+    # When a recipe fails because the player is missing some requirements:
+
+    # It sends the value of messages.missingReqs.pre
+    # If messages.missingReqs.sayMissing is true, it sends a message for each requirement that is not in the player crafting's inventory
+    # It sends the value of messages.missingReqs.between
+    # If messages.missingReqs.sayThere is true, it sends a message for each requirement that is in the player crafting's inventory
+    # It sends the value of messages.missingReqs.post
+
+    pre: "You are missing the following items in your inventory:"
+    sayMissing: true
+    between: "But you have the following required items:"
+    sayThere: true
+    post: ""

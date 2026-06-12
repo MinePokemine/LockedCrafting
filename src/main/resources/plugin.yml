@@ -1,0 +1,5 @@
+name: LockedCrafting
+version: '1.0-SNAPSHOT'
+main: com.minepokemine.lockedCrafting.LockedCrafting
+api-version: '1.21'
+authors: [ MinePokemine ]
