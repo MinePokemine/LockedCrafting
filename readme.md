@@ -11,3 +11,7 @@ By default, after trying to craft a locked recipe,
 it will tell you what items you are missing,
 and what required items you have.
 You can stop it from telling you either or both of these.
+
+---
+
+#### [How to configure messages](./messageConfig.md)
