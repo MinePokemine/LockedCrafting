@@ -9,8 +9,10 @@ import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.CrafterCraftEvent;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;
 import org.bukkit.inventory.ComplexRecipe;
+import org.bukkit.inventory.CraftingRecipe;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 
@@ -80,6 +82,25 @@ public class Events implements Listener {
                 event.getInventory().setResult(new ItemStack(Material.AIR));
             }
             LockedCrafting.instance.getLogger().info("Recipe success");
+        }
+    }
+
+    @EventHandler
+    void onCrafter(CrafterCraftEvent event) {
+        CraftingRecipe rec = event.getRecipe();
+        NamespacedKey key;
+        key = rec.getKey();
+        LockedCrafting.instance.getLogger().info("Crafter crafting recipe " + key.asString());
+
+        List<String> reqs = new ArrayList<>();
+
+        if (key.namespace().equals("minecraft")) {
+            reqs.addAll(LockedCrafting.instance.getConfig().getStringList("recipes." + key.getKey() + ".itemReqs"));
+        }
+        reqs.addAll(LockedCrafting.instance.getConfig().getStringList("recipes." + key.getNamespace() + "." + key.getKey() + ".itemReqs"));
+
+        if (reqs.size() != 0) {
+            event.setCancelled(true);
         }
     }
 }
